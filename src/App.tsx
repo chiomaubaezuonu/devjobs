@@ -26,8 +26,7 @@ function App() {
           </div>
         </div>
         <div className="header-filters">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, inventore repellat. Sequi qui voluptatibus autem alias laudantium et non totam?
-        </div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, inventore </div>
       </header>
 
     </>
