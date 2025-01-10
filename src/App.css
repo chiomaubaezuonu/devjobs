@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("/images/bg-pattern-header.549c5470.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 2.813rem 12.4rem 5.4rem 12.4rem;
+  position: relative;
+
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.theme {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.sun {
+  width: 1.184rem;
+}
+.ant-switch .ant-switch-inner{
+  background-color: white;
+}
+.ant-switch .ant-switch-handle::before{
+  background-color: #5964e0;
+}
+
+.moon {
+  width: 0.75rem;
+}
+
+/* .theme img{
+  width: 25px;
+
+} */
+.header-filters {
+  width: calc(100% - 24.8rem);
+  background-color: red;
+  position: absolute;
+  bottom: -2rem;
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+}
+
+
