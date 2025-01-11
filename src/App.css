@@ -123,10 +123,12 @@ body {
   background-color: var(--filters-bg-color);
   justify-content: space-between;
 }
-.hours{
+
+.hours {
   display: flex;
 }
-.job-hours-text{
+
+.job-hours-text {
   color: var(--text-color);
   font-weight: 700;
 }
@@ -149,10 +151,7 @@ body {
   transition: background-color .2s ease-out;
 }
 
-main {
-  background-color: pink;
-}
-.dark{
+.dark {
   background-color: var(--text-color);
 }
 
@@ -178,6 +177,38 @@ main {
   margin-left: 0.1rem;
 }
 
+.jobs-list-container {
+  display: flex;
+  /* padding: 1rem 8rem; */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  width: calc(100% - 25rem);
+  margin: auto;
+  margin-top: 8rem;
+
+
+.job-div {
+  padding: 3.125rem 2rem 2rem;
+  margin-bottom: 0.7rem;
+  margin-top: 1.563rem;
+  border-radius: 0.375rem;
+  background-color: var(--filters-bg-color);
+  width: calc(33.33333% - 1.8rem);
+  position: relative;
+}
+}
+
+.logo-container {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 0.938rem;
+  position: absolute;
+  top: -1.5rem;
+  border: none;
+
+}
 
 @media (max-width: 767px) {
   .header {
@@ -192,13 +223,13 @@ main {
   }
 
 
-   .header-filters {
+  .header-filters {
     width: calc(100% - 2rem);
     /* background-color: red; */
     bottom: -2rem;
   }
 
- /* input {
+  /* input {
     outline: none;
      border-right: 1px solid rgba(110, 128, 152, .2); */
   /*border-right: 1px solid rgba(95, 243, 41, 0.2);
