@@ -21,6 +21,7 @@ body {
   font-family: "Kumbh Sans", serif;
 }
 
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +32,6 @@ body {
   width: 100%;
   padding: 2.813rem 12.4rem 5rem 12.4rem;
   position: relative;
-  border-bottom-left-radius: 3rem;
 }
 
 .inner {
@@ -149,7 +149,12 @@ body {
   transition: background-color .2s ease-out;
 }
 
-main {}
+main {
+  background-color: pink;
+}
+.dark{
+  background-color: var(--text-color);
+}
 
 .span1 {
   background-color: var(--button-light-color);
@@ -174,7 +179,6 @@ main {}
 }
 
 
-
 @media (max-width: 767px) {
   .header {
     padding: 2rem 1rem 5.4rem 1rem;
@@ -188,15 +192,15 @@ main {}
   }
 
 
-  /* .header-filters {
+   .header-filters {
     width: calc(100% - 2rem);
-    background-color: red;
+    /* background-color: red; */
     bottom: -2rem;
   }
 
-  input {
+ /* input {
     outline: none;
-    /* border-right: 1px solid rgba(110, 128, 152, .2); */
+     border-right: 1px solid rgba(110, 128, 152, .2); */
   /*border-right: 1px solid rgba(95, 243, 41, 0.2);
     cursor: pointer;
     padding: 1rem;
