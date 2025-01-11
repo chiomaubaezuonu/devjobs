@@ -21,13 +21,28 @@ function App() {
           </div>
           <div className="theme">
             <img src="/images/sun.svg" className='sun' alt="sun" />
-            <Switch defaultChecked onChange={onChange}  checked={false} />
+            <Switch defaultChecked onChange={onChange} checked={false} />
             <img src="/images/moon.svg" className='moon' alt="moon" />
           </div>
         </div>
         <div className="header-filters">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, inventore </div>
+          <input type="text" className='search-input' placeholder='Filter by title, comnpanies, expertise...' />
+          <input type="text" className='location-filter' placeholder='Filter by location...' />
+          <div className="job-hours-div">
+            <div className="hours">
+              <span className='span1'>
+                <span className='span2'>
+                </span>
+              </span>
+              <span className='job-hours-text'>Full Time Only</span>
+            </div>
+            <button className='search-btn'>Search</button>
+          </div>
+        </div>
       </header>
+      <main>
+
+      </main>
 
     </>
   )
