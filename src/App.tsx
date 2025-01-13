@@ -32,6 +32,7 @@ function App() {
 
 
   const [darkTheme, setDarkTheme] = useState(false)
+  const [displayedJobs, setDisplayedJobs] = useState(12)
 
 
   const onChange = (checked: boolean) => {
@@ -77,7 +78,7 @@ function App() {
       </header>
 
       <main className={`jobs-list-container ${darkTheme ? "dark" : ""} `}>
-        {jobData.map((job) => {
+        {jobData.slice(0, displayedJobs).map((job) => {
           return <div key={job.id} className='job-card'>
             <div className="job-details">
               <div className='logo-background' style={{ backgroundColor: job.logoBackground }}>
@@ -94,6 +95,7 @@ function App() {
           </div>
         })
         }
+        {displayedJobs === 12 ? <button className='load-more-btn' onClick={() => setDisplayedJobs(15)}>Load More</button> : ""}
       </main>
 
     </>

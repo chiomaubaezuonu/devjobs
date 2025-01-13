@@ -179,7 +179,7 @@ body {
 
 .jobs-list-container {
   display: flex;
-  /* padding: 1rem 8rem; */
+  /* padding: 1.25rem 0 6.25rem 0;  why this bottom-padding is not visible*/
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
@@ -187,7 +187,9 @@ body {
   width: calc(100% - 25rem);
   margin: auto;
   margin-top: 8rem;
+  margin-bottom: 6.25rem;
 }
+
 .job-card {
   padding: 3.5rem 2rem 3.5rem;
   margin-bottom: 2.5rem;
@@ -241,7 +243,8 @@ body {
   background-color: var(--light-text-color);
 }
 
-.contract, .company {
+.contract,
+.company {
   font-size: 1rem;
   line-height: 1rem;
   color: var(--light-text-color);
@@ -265,6 +268,21 @@ body {
   line-height: 0.875rem;
 }
 
+.load-more-btn {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #5964e0;
+  border-radius: 0.313rem;
+  padding: 1rem 1.25rem;
+  width: 8.813rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color .2s ease-out;
+}
 
 @media (max-width: 767px) {
   .header {
