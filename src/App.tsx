@@ -16,7 +16,7 @@ import './App.css'
 //   apply: string,
 //   description: string,
 //   requirements: {
-//     contents: string,    Why does having this throw netlify error that `Job is declared but never used`
+//     contents: string,    Why does having this throw netlify error that `Job is declared but never used` and ask of the header curve too
 //     items: [],
 //   },
 //   role: {
@@ -33,10 +33,10 @@ function App() {
 
   const [darkTheme, setDarkTheme] = useState(false)
   const [displayedJobs, setDisplayedJobs] = useState(12)
+  const [isChecked, setIsChecked] = useState(false)
 
 
   const onChange = (checked: boolean) => {
-    console.log(checked)
     checked ? setDarkTheme(true) : setDarkTheme(false)
   };
 
@@ -46,7 +46,7 @@ function App() {
 
 
 
-
+console.log(isChecked)
   return (
     <>
 
@@ -66,8 +66,8 @@ function App() {
           <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' />
           <div className={`job-hours-div ${darkTheme ? "dark" : ""}`}>
             <div className="hours">
-              <span className='span1'>
-                <span className='span2'>
+              <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() =>  setIsChecked(!isChecked)}>
+                <span className={`tick ${!isChecked ? "untick" : ""}`}>
                 </span>
               </span>
               <span className='job-hours-text'>Full Time Only</span>
@@ -75,7 +75,7 @@ function App() {
             <button className='search-btn'>Search</button>
           </div>
           <div className="mobile-input-wrapper">
-            <input className="search-input-mobile" type="text" placeholder='filter by title...' required />
+            <input className={`search-input-mobile ${darkTheme ? "dark" : ""}`} type="text" placeholder='filter by title...' required />
             <img src="/images/filter-mobile.svg" className='mobile-filter' alt="filter-mobile" />
             <div className="search-icon-div">
               <img src="/images/mobile-search.svg" className='mobile-search' alt="mobile-search" />
