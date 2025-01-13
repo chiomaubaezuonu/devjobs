@@ -74,6 +74,13 @@ function App() {
             </div>
             <button className='search-btn'>Search</button>
           </div>
+          <div className="mobile-input-wrapper">
+            <input className="search-input-mobile" type="text" placeholder='filter by title...' required />
+            <img src="/images/filter-mobile.svg" className='mobile-filter' alt="filter-mobile" />
+            <div className="search-icon-div">
+              <img src="/images/mobile-search.svg" className='mobile-search' alt="mobile-search" />
+            </div>
+          </div>
         </div>
       </header>
 
