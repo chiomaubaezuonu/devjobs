@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Switch } from 'antd';
+import { Switch, Modal } from 'antd';
 import jobData from './data';
 import './App.css'
 
@@ -45,8 +45,21 @@ function App() {
   }, [darkTheme])
 
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-console.log(isChecked)
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+
   return (
     <>
 
@@ -66,7 +79,7 @@ console.log(isChecked)
           <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' />
           <div className={`job-hours-div ${darkTheme ? "dark" : ""}`}>
             <div className="hours">
-              <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() =>  setIsChecked(!isChecked)}>
+              <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
                 <span className={`tick ${!isChecked ? "untick" : ""}`}>
                 </span>
               </span>
@@ -76,14 +89,24 @@ console.log(isChecked)
           </div>
           <div className="mobile-input-wrapper">
             <input className={`search-input-mobile ${darkTheme ? "dark" : ""}`} type="text" placeholder='filter by title...' required />
-            <img src="/images/filter-mobile.svg" className='mobile-filter' alt="filter-mobile" />
+            <img src="/images/filter-mobile.svg" onClick={showModal} className='mobile-filter' alt="filter-mobile" />
             <div className="search-icon-div">
               <img src="/images/mobile-search.svg" className='mobile-search' alt="mobile-search" />
             </div>
           </div>
         </div>
       </header>
-
+      <Modal className='modal' open={isModalOpen} onOk={handleOk} onCancel={handleCancel} getContainer={false } >
+        {/* <input type="text" className={`location-filter-mobile ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' /> */}
+        <select className="location-filter-mobile"><option value="false">Filter by location…</option><option value="Germany">Germany</option><option value="Japan">Japan</option><option value="New Zealand">New Zealand</option><option value="Russia">Russia</option><option value="Singapore">Singapore</option><option value="United Kingdom">United Kingdom</option><option value="United States">United States</option></select>
+        <div className="hours">
+          <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
+            <span className={`tick ${!isChecked ? "untick" : ""}`}>
+            </span>
+          </span>
+          <span className='job-hours-text'>Full Time Only</span>
+        </div>
+      </Modal>
       <main className={`jobs-list-container ${darkTheme ? "main-dark" : ""} `}>
         {jobData.slice(0, displayedJobs).map((job) => {
           return <div key={job.id} className={`job-card  ${darkTheme ? "dark" : ""} `}>

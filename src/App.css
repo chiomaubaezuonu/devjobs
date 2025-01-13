@@ -19,6 +19,7 @@
 body {
   background-color: var(--app-bg-color);
   font-family: "Kumbh Sans", serif;
+  overflow: auto;
 }
 
 
@@ -179,10 +180,12 @@ body {
   margin-top: 0.18rem;
   margin-left: 0.1rem;
 }
-.unchecked{
+
+.unchecked {
   background-color: var(--app-bg-color);
 }
-.untick{
+
+.untick {
   display: none;
 }
 
@@ -300,6 +303,10 @@ body {
   outline: none;
   transition: background-color .2s ease-out;
 }
+.ant-modal .ant-modal-content{
+  display: none;
+}
+
 
 @media (max-width: 767px) {
   .header {
@@ -330,9 +337,73 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
-    /* padding: 1.7rem 3.5rem 1.7rem 2rem; */
     padding: 2rem 3.5rem 2rem 2rem;
     width: 100vw;
+  }
+
+  .modal {
+    
+  }
+
+  .ant-modal .ant-modal-content{
+    display: block;
+    top: 7.1rem;
+    border-radius: 6px;
+    padding: 1.5rem 24px 2.98rem 24px;
+    width: 22.175rem;
+    margin: 0 auto;
+  }
+
+  .anticon {
+    display: none;
+  }
+
+  .ant-modal .ant-modal-footer>.ant-btn+.ant-btn,
+  .ant-btn-variant-outlined {
+    display: none;
+  }
+
+  .jobs-list-container {
+    /* overflow: hidden;
+    height: 100vh; */
+  }
+
+  select {
+    -webkit-appearance: none;
+    /* Safari/Chrome */
+    -moz-appearance: none;
+    /* Firefox */
+    appearance: none;
+    /* Standard */
+    background: none;
+    /* Remove default background */
+    cursor: pointer;
+    color: var(--placeholder-color);
+    font-size: 1rem;
+  }
+  
+
+  .location-filter-mobile {
+    display: block;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+    width: 100%;
+    border-bottom: 0.063rem solid rgba(110, 128, 152, .2);
+    background-image: url("/images/location.svg");
+    background-position: left 0.3rem center;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+
+  }
+ 
+  .hours{
+    margin-top: 2rem;
+  }
+  .job-hours-text{
+     font-size: 1rem;
+      font-weight: 700;
   }
 
   .mobile-input-wrapper {
@@ -369,7 +440,8 @@ body {
     width: 1.2rem;
     height: 1.2rem;
   }
-  .jobs-list-container{
+
+  .jobs-list-container {
     display: block;
     justify-content: center;
     flex-wrap: wrap;
@@ -381,7 +453,8 @@ body {
     padding: 0 1.25rem;
     margin-bottom: 6.25rem;
   }
-  .job-card{
+
+  .job-card {
     padding: 3.5rem 2rem 3.5rem;
     margin-bottom: 2.5rem;
     margin-top: 1.563rem;
@@ -390,10 +463,13 @@ body {
     width: 100%;
     position: relative;
   }
-.load-more-btn.mobile{
-  width: 100%;
-}
-.dark{
-   background-color: var(--text-color); /*why are cards  given background-color when I add this style in media query */
-}
+
+  .load-more-btn.mobile {
+    width: 100%;
+  }
+
+  .dark {
+    background-color: var(--text-color);
+    /*why are cards  given background-color when I add this style in media query */
+  }
 }
