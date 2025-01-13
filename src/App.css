@@ -151,9 +151,7 @@ body {
   transition: background-color .2s ease-out;
 }
 
-.dark {
-  background-color: var(--text-color);
-}
+
 
 .span1 {
   background-color: var(--button-light-color);
@@ -189,6 +187,9 @@ body {
   margin-top: 8rem;
   margin-bottom: 6.25rem;
 }
+.main-dark{
+  background-color: "#121721";
+}
 
 .job-card {
   padding: 3.5rem 2rem 3.5rem;
@@ -198,6 +199,9 @@ body {
   background-color: var(--filters-bg-color);
   width: calc(33.33333% - 1.8rem);
   position: relative;
+}
+.dark{
+  background-color: var(--text-color);
 }
 
 .job-details {

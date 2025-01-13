@@ -77,9 +77,9 @@ function App() {
         </div>
       </header>
 
-      <main className={`jobs-list-container ${darkTheme ? "dark" : ""} `}>
+      <main className={`jobs-list-container ${darkTheme ? "main-dark" : ""} `}>
         {jobData.slice(0, displayedJobs).map((job) => {
-          return <div key={job.id} className='job-card'>
+          return <div key={job.id} className={`job-card  ${darkTheme ? "dark" : ""} `}>
             <div className="job-details">
               <div className='logo-background' style={{ backgroundColor: job.logoBackground }}>
                 <img src={job.logo} className='logo' alt="logo" />
