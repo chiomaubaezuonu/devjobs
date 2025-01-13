@@ -200,15 +200,21 @@ body {
 }
 }
 
-.logo-container {
+.logo-background {
   width: 3.125rem;
   height: 3.125rem;
   border-radius: 0.938rem;
   position: absolute;
   top: -1.5rem;
   border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
 }
+
 
 @media (max-width: 767px) {
   .header {

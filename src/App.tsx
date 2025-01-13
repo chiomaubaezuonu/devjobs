@@ -90,8 +90,8 @@ function App() {
               <p>{job.company}</p>
               <p>{job.location}</p>
             </div>
-            <div className='logo-container' style={{backgroundColor: job.logoBackground}}>
-              <img src={job.logo} alt="logo" />
+            <div className='logo-background' style={{backgroundColor: job.logoBackground}}>
+              <img src={job.logo} className='logo' alt="logo" />
             </div>
           </div>
         })
