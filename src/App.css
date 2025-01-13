@@ -187,17 +187,19 @@ body {
   width: calc(100% - 25rem);
   margin: auto;
   margin-top: 8rem;
-
-
-.job-div {
-  padding: 3.125rem 2rem 2rem;
-  margin-bottom: 0.7rem;
+}
+.job-card {
+  padding: 3.5rem 2rem 3.5rem;
+  margin-bottom: 2.5rem;
   margin-top: 1.563rem;
   border-radius: 0.375rem;
   background-color: var(--filters-bg-color);
   width: calc(33.33333% - 1.8rem);
   position: relative;
 }
+
+.job-details {
+  margin-bottom: 1rem;
 }
 
 .logo-background {
@@ -212,7 +214,55 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
 
+.job-post-div {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.job-post {
+  display: flex;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--light-text-color);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  display: flex;
+  margin: 0 0.75;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--light-text-color);
+}
+
+.contract, .company {
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--light-text-color);
+  align-items: center;
+}
+
+.job-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: var(--text-color);
+  margin: 0 0 1rem;
+}
+
+
+.job-location {
+  cursor: pointer;
+  color: var(--button-light-color);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
 }
 
 

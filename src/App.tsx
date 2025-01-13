@@ -44,7 +44,7 @@ function App() {
   }, [darkTheme])
 
 
- 
+
 
   return (
     <>
@@ -78,19 +78,19 @@ function App() {
 
       <main className={`jobs-list-container ${darkTheme ? "dark" : ""} `}>
         {jobData.map((job) => {
-          return <div key={job.id} className='job-div'>
+          return <div key={job.id} className='job-card'>
             <div className="job-details">
-              <p>
-                <span>{job.postedAt}.</span>
-                <span>{job.contract}</span>
-              </p>
-              <h2>{job.position}</h2>
-              <p>{job.company}</p>
-              <p>{job.location}</p>
+              <div className='logo-background' style={{ backgroundColor: job.logoBackground }}>
+                <img src={job.logo} className='logo' alt="logo" />
+              </div>
+              <div className='job-post-div'>
+                <span className='job-post'>{job.postedAt} <span className="dot"> . </span></span>
+                <span className='contract'>{job.contract}</span>
+              </div>
+              <p className='job-title'>{job.position}</p>
+              <p className='company'>{job.company}</p>
             </div>
-            <div className='logo-background' style={{backgroundColor: job.logoBackground}}>
-              <img src={job.logo} className='logo' alt="logo" />
-            </div>
+            <p className='job-location'>{job.location}</p>
           </div>
         })
         }
