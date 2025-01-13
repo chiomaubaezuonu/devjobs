@@ -102,7 +102,7 @@ function App() {
           </div>
         })
         }
-        {displayedJobs === 12 ? <button className='load-more-btn' onClick={() => setDisplayedJobs(15)}>Load More</button> : ""}
+        {displayedJobs === 12 ? <button className='load-more-btn mobile' onClick={() => setDisplayedJobs(15)}>Load More</button> : ""}
       </main>
 
     </>
