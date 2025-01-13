@@ -32,7 +32,7 @@ function App() {
 
 
   const [darkTheme, setDarkTheme] = useState(false)
-  const [jobs, setJobs] = useState<JOb[]>()
+
 
   const onChange = (checked: boolean) => {
     console.log(checked)
@@ -44,9 +44,7 @@ function App() {
   }, [darkTheme])
 
 
-  // useEffect(() => {
-  //   console.log(jobData.map(job => job.company))
-  // }, [])
+ 
 
   return (
     <>
