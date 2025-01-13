@@ -3,30 +3,30 @@ import { Switch } from 'antd';
 import jobData from './data';
 import './App.css'
 
-interface JOb {
-  id: number,
-  company: string,
-  logo: string,
-  logoBackground: string,
-  position: string,
-  postedAt: string,
-  contract: string,
-  location: string,
-  website: string,
-  apply: string,
-  description: string,
-  requirements: {
-    contents: string,
-    items: [],
-  },
-  role: {
-    contents: string,
-    items: []
-  }
+// interface JOb {
+//   id: number,
+//   company: string,
+//   logo: string,
+//   logoBackground: string,
+//   position: string,
+//   postedAt: string,
+//   contract: string,
+//   location: string,
+//   website: string,
+//   apply: string,
+//   description: string,
+//   requirements: {
+//     contents: string,    Why does having this throw netlify error that `Job is declared but never used`
+//     items: [],
+//   },
+//   role: {
+//     contents: string,
+//     items: []
+//   }
 
 
 
-}
+// }
 
 function App() {
 
