@@ -214,6 +214,7 @@ body {
   background-color: var(--filters-bg-color);
   width: calc(33.33333% - 1.8rem);
   position: relative;
+  cursor: pointer;
 }
 
 .dark {
@@ -303,7 +304,7 @@ body {
   outline: none;
   transition: background-color .2s ease-out;
 }
-.ant-modal .ant-modal-content{
+.ant-modal .ant-modal-content,  .ant-modal-root .ant-modal-mask{
   display: none;
 }
 
@@ -349,7 +350,7 @@ body {
     display: block;
     top: 7.1rem;
     border-radius: 6px;
-    padding: 1.5rem 24px 2.98rem 24px;
+    padding: 1rem 24px 0.7rem 24px;
     width: 22.175rem;
     margin: 0 auto;
   }
@@ -363,6 +364,7 @@ body {
     display: none;
   }
   .ant-modal-root .ant-modal-mask {
+    display: block;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -403,6 +405,7 @@ body {
  
   .hours{
     margin-top: 2rem;
+    margin-bottom: 1.2rem;
   }
   .job-hours-text{
      font-size: 1rem;
@@ -465,6 +468,7 @@ body {
     background-color: var(--filters-bg-color);
     width: 100%;
     position: relative;
+   
   }
 
   .load-more-btn.mobile {
