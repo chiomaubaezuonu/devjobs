@@ -162,6 +162,10 @@ body {
   transition: background-color .2s ease-out;
 }
 
+.search-btn, .apply-btn:hover {
+  background-color: #939BF4;
+}
+
 
 
 .tick-bg {
@@ -284,7 +288,6 @@ body {
 
 
 .job-location {
-  cursor: pointer;
   color: var(--button-light-color);
   font-weight: 700;
   font-size: 0.875rem;
@@ -383,7 +386,7 @@ body {
 }
 
 .company-site {
-  background-color: var(--button-light-bg-color-hvr);
+  background-color: var(--button-light-bg-color);
   color: var(--button-light-color);
   text-decoration: none;
   transition: background-color .2s ease-out;
@@ -395,6 +398,9 @@ body {
   padding: 1rem 1.25rem;
   min-width: 141px;
   cursor: pointer;
+}
+.company-site:hover{
+  background-color: var(--button-light-bg-color-hvr);
 }
 
 .job-info-container {
@@ -709,7 +715,8 @@ body {
     overflow: visible;
     top: -1rem;
   }
-  .company-site{
+
+  .company-site {
     background-color: var(--button-light-bg-color);
     cursor: pointer;
   }
@@ -787,14 +794,16 @@ body {
     padding: 0 1.25rem;
   }
 
-  .requirement-title{
+  .requirement-title {
     color: white;
     background-color: #19202d;
   }
-  .title-light-bg{
+
+  .title-light-bg {
     background-color: var(--filters-bg-color);
     color: var(--text-color);
   }
+
   .requirement-list-container {
     padding: 0;
   }
