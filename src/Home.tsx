@@ -175,7 +175,7 @@ function Home() {
                                     <p className='job-location'>{selectedJob.location}</p>
                                 </div>
                                 <div className="btn-div">
-                                    <a target='_blank' className="apply-btn">Apply</a>
+                                    <a href={selectedJob.website} target='_blank' className="apply-btn">Apply</a>
                                 </div>
                             </div>
                             <p className={`job-desc ${darkTheme ? "dark" : ""}`}>{selectedJob.description}</p>
@@ -204,7 +204,7 @@ function Home() {
                                 <p className='footer-company'>{selectedJob.company}</p>
                             </div>
                             <div className="btn-div">
-                                <a target='_blank' className="apply-btn">Apply</a>
+                                <a href={selectedJob.website} target='_blank' className="apply-btn">Apply</a>
                             </div>
                         </div>
 

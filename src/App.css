@@ -711,6 +711,7 @@ body {
   }
   .company-site{
     background-color: var(--button-light-bg-color);
+    cursor: pointer;
   }
 
   .logo-bg {
