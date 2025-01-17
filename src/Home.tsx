@@ -143,7 +143,7 @@ function Home() {
                 </div>
                 :
                 <div>
-                    <div className="selectedJob">
+                    <div className={`selectedJob ${darkTheme ? "selected-dark" : ""}`}>
                         <div className="company-name-wrapper">
                             <div className={`company-details ${darkTheme ? "dark" : ""} `}>
                                 <div className="logo-bg" style={{ backgroundColor: selectedJob.logoBackground }}>
@@ -174,20 +174,20 @@ function Home() {
                                         className='title'>{selectedJob.position}</p>
                                     <p className='job-location'>{selectedJob.location}</p>
                                 </div>
-                                <div className="div">
+                                <div className="btn-div">
                                     <a target='_blank' className="apply-btn">Apply</a>
                                 </div>
                             </div>
-                            <p className='job-desc'>{selectedJob.description}</p>
-                            <p className='requirement-title'>Requirements</p>
-                            <p className='requirement-text'>{selectedJob.requirements.content}</p>
+                            <p className={`job-desc ${darkTheme ? "dark" : ""}`}>{selectedJob.description}</p>
+                            <p className={`requirement-title ${!darkTheme ? "title-light-bg" : ""}`}>Requirements</p>
+                            <p className={`requirement-text ${darkTheme ? "dark" : ""}`}>{selectedJob.requirements.content}</p>
                             <ul className='requirement-list-container'>
                                 {selectedJob.requirements.items.map((item) => (
                                     <li className='requirement-list'>{item}</li>
                                 ))}
                             </ul>
-                            <p className='requirement-title'>What You Will Do</p>
-                            <p className='requirement-text'>{selectedJob.role.content}</p>
+                            <p className={`requirement-title ${!darkTheme ? "title-light-bg" : ""}`}>What You Will Do</p>
+                            <p className={`requirement-text ${darkTheme ? "dark" : ""}`}>{selectedJob.role.content}</p>
 
                             <ul className='requirement-list-container'>
                                 {selectedJob.role.items.map((item) => (
@@ -203,7 +203,7 @@ function Home() {
                                 <p className={`title ${darkTheme ? "footer-dark" : ""}`}>{selectedJob.position}</p>
                                 <p className='footer-company'>{selectedJob.company}</p>
                             </div>
-                            <div className="div">
+                            <div className="btn-div">
                                 <a target='_blank' className="apply-btn">Apply</a>
                             </div>
                         </div>

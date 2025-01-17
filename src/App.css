@@ -437,7 +437,7 @@ body {
 
 .apply-btn {
   font-weight: 700;
-  font-size: 1ren;
+  font-size: 1rem;
   transition: background-color .2s ease-out;
   text-decoration: none;
   text-align: center;
@@ -688,6 +688,7 @@ body {
     position: relative;
     margin-top: 1.5rem;
     width: 100%;
+    background-color: #f2f2f2;
   }
 
   .company-name-wrapper {
@@ -737,13 +738,84 @@ body {
   }
 
   .job-info-container {
-    width: 100%;
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0 1.25rem;
+    border-radius: 0.375rem;
+    margin-bottom: 3.5rem;
   }
 
+  .job-info {
+    background-color: var(--filters-bg-color);
+    border-radius: 0.375rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding: 2.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .job-top-info-left {
+    margin-bottom: 3.375rem;
+    width: 100%;
+  }
+
+  .btn-div {
+    width: 100%;
+  }
+
+  .apply-btn {
+    width: 100%;
+    display: block;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .job-desc,
+  .requirement-title,
+  .requirement-text {
+    background-color: var(--filters-bg-color);
+    padding: 0 1.25rem;
+  }
+
+  .requirement-title{
+    color: white;
+    background-color: #19202d;
+  }
+  .title-light-bg{
+    background-color: var(--filters-bg-color);
+    color: var(--text-color);
+  }
+  .requirement-list-container {
+    padding: 0;
+  }
+
+  .requirement-list {
+    padding: 0 1.15rem;
+    list-style-position: inside;
+  }
+
+  .footer-details {
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .footer-details .title,
+  .footer-company {
+    display: none;
+  }
 
   .dark {
     background-color: var(--text-color);
     /*why are cards  given background-color when I add this style in media query */
+  }
+
+  .selected-dark {
+    background-color: #121721;
   }
 }
