@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import jobData from './data';
-import { Modal, Switch } from 'antd';
+import { Divider, Modal, Switch } from 'antd';
 import './App.css'
 import Header from './Header';
 
@@ -33,6 +33,8 @@ function Home() {
     const [displayedJobs, setDisplayedJobs] = useState(12)
     const [isChecked, setIsChecked] = useState(false)
     const [selectedJob, setSelectedJob] = useState<Job | null>(null)
+    const [position, setPosition] = useState("")
+    const [filteredJobs, setFilteredJobs] = useState(jobData)
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -67,6 +69,20 @@ function Home() {
         document.body.style.backgroundColor = darkTheme ? "#121721" : "#f2f2f2"
     }, [darkTheme])
 
+
+
+    const handleSearch = () => {
+        const searchPosition = jobData.filter((job) =>
+            job.position.toLowerCase().includes(position.toLowerCase()) ||
+            job.company.toLowerCase().includes(position.toLowerCase())
+        );
+
+        setFilteredJobs(searchPosition);
+    };
+
+
+
+
     return (
         <>
 
@@ -83,8 +99,9 @@ function Home() {
                         <img src="/images/moon.svg" className='moon' alt="moon" />
                     </div>
                 </div>
+
                 {!selectedJob ? <div className="header-filters">
-                    <input type="text" className={`search-input ${darkTheme ? "dark" : ""}`} placeholder='Filter by title, comnpanies, expertise...' />
+                    <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} className={`search-input ${darkTheme ? "dark" : ""}`} placeholder='Filter by title, comnpanies, expertise...' />
                     <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' />
                     <div className={`job-hours-div ${darkTheme ? "dark" : ""}`}>
                         <div className="hours">
@@ -94,7 +111,7 @@ function Home() {
                             </span>
                             <span className='job-hours-text'>Full Time Only</span>
                         </div>
-                        <button className='search-btn'>Search</button>
+                        <button onClick={handleSearch} className='search-btn'>Search</button>
                     </div>
                     <div className="mobile-input-wrapper">
                         <input className={`search-input-mobile ${darkTheme ? "dark" : ""}`} type="text" placeholder='filter by title...' required />
@@ -103,6 +120,8 @@ function Home() {
                             <img src="/images/mobile-search.svg" className='mobile-search' alt="mobile-search" />
                         </div>
                     </div>
+
+
                 </div>
                     : ""
                 }
@@ -121,7 +140,7 @@ function Home() {
                         <button className='load-more-btn mobile' onClick={() => setDisplayedJobs(15)}>Load More</button>
                     </Modal>
                     <main className={`jobs-list-container ${darkTheme ? "main-dark" : ""} `}>
-                        {jobData.slice(0, displayedJobs).map((job) => {
+                        {filteredJobs.slice(0, displayedJobs).map((job) => {
                             return <div key={job.id} className={`job-card  ${darkTheme ? "dark" : ""} `} onClick={() => (handleSelectedJob(job.id))}>
                                 <div className="job-details">
                                     <div className='logo-background' style={{ backgroundColor: job.logoBackground }}>
@@ -138,7 +157,7 @@ function Home() {
                             </div>
                         })
                         }
-                        {displayedJobs === 12 ? <button className='load-more-btn mobile' onClick={() => setDisplayedJobs(15)}>Load More</button> : ""}
+                        {filteredJobs.length > 12 && displayedJobs === 12 ? <button className='load-more-btn mobile' onClick={() => setDisplayedJobs(15)}>Load More</button> : ""}
                     </main>
                 </div>
                 :
