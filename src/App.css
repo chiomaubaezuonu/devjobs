@@ -91,7 +91,7 @@ body {
   border: none;
   border-right: 0.063rem solid rgba(110, 128, 152, .2);
   cursor: pointer;
-  padding: 2rem 3.5rem 2rem 2rem;
+  padding: 2rem 4.5rem 2rem 2rem;
   background-image: url("/images/search.svg");
   background-position: left 1rem center;
   background-size: 1rem;
@@ -106,20 +106,33 @@ body {
   border: none;
   border-right: 0.063rem solid rgba(110, 128, 152, .2);
   cursor: pointer;
-  padding: 2rem 3.5rem 2rem 2rem;
+  padding: 2.18rem 0.5rem 2rem 1rem;
   background-image: url("/images/location.svg");
   background-position: left 1rem center;
   background-size: 1rem;
   background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  color: var(--placeholder-color);
+  font-size: 0.8rem;
 }
+
+.location-filter.default-text {
+  color: var(--placeholder-color);
+  padding-left: 3rem;
+
+}
+
 
 .job-hours {
   outline: none;
-  /* flex: 1; */
+  flex: 1;
   border: none;
   border-right: 0.063rem solid rgba(110, 128, 152, .2);
   cursor: pointer;
-  padding: 2rem 3.5rem 2rem 2rem;
+  /* padding: 2rem 2rem 2rem 3.5rem; */
 }
 
 ::placeholder {
@@ -162,7 +175,8 @@ body {
   transition: background-color .2s ease-out;
 }
 
-.search-btn, .apply-btn:hover {
+.search-btn:hover,
+.apply-btn:hover {
   background-color: #939BF4;
 }
 
@@ -399,7 +413,8 @@ body {
   min-width: 141px;
   cursor: pointer;
 }
-.company-site:hover{
+
+.company-site:hover {
   background-color: var(--button-light-bg-color-hvr);
 }
 

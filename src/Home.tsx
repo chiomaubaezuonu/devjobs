@@ -73,14 +73,20 @@ function Home() {
 
     const handleSearch = () => {
         const searchPosition = jobData.filter((job) =>
+
             job.position.toLowerCase().includes(position.toLowerCase()) ||
             job.company.toLowerCase().includes(position.toLowerCase())
+            // const matchesContract = !isChecked || job.contract === "Full Time";
+
+            // // Include job only if both conditions are satisfied
+            // return matchesSearch && matchesContract;
+
         );
 
         setFilteredJobs(searchPosition);
+
+
     };
-
-
 
 
     return (
@@ -102,7 +108,20 @@ function Home() {
 
                 {!selectedJob ? <div className="header-filters">
                     <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} className={`search-input ${darkTheme ? "dark" : ""}`} placeholder='Filter by title, comnpanies, expertise...' />
-                    <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' />
+                    {/* <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' /> */}
+                    <select className={`location-filter default-text ${darkTheme ? "dark" : ""}`}>
+                        {/* <option className='default' disabled hidden value="false">Filter by location…</option> */}
+                        <option value="false">
+                            Filter by location...
+                        </option>
+                        <option value="Germany">Germany</option>
+                        <option value="Japan">Japan</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                    </select>
                     <div className={`job-hours-div ${darkTheme ? "dark" : ""}`}>
                         <div className="hours">
                             <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
@@ -129,7 +148,16 @@ function Home() {
             {!selectedJob ?
                 <div>
                     <Modal className='modal' open={isModalOpen} onOk={handleOk} onCancel={handleCancel} getContainer={false} >
-                        <select className="location-filter-mobile"><option value="false">Filter by location…</option><option value="Germany">Germany</option><option value="Japan">Japan</option><option value="New Zealand">New Zealand</option><option value="Russia">Russia</option><option value="Singapore">Singapore</option><option value="United Kingdom">United Kingdom</option><option value="United States">United States</option></select>
+                        <select className="location-filter-mobile">
+                            <option value="false">Filter by location…</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Japan">Japan</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                        </select>
                         <div className="hours">
                             <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
                                 <span className={`tick ${!isChecked ? "untick" : ""}`}>
