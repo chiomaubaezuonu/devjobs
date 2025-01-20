@@ -31,11 +31,11 @@ function Home() {
 
     const [darkTheme, setDarkTheme] = useState(false)
     const [displayedJobs, setDisplayedJobs] = useState(12)
-    const [isChecked, setIsChecked] = useState(false)
+    const [onlyShowFullTime, setOnlyShowFullTime] = useState(false)
     const [selectedJob, setSelectedJob] = useState<Job | null>(null)
     const [position, setPosition] = useState("")
     const [filteredJobs, setFilteredJobs] = useState(jobData)
-
+    const [location, setLocation] = useState("")
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -72,24 +72,33 @@ function Home() {
 
 
     const handleSearch = () => {
-        const searchPosition = jobData.filter((job) =>
-
-            job.position.toLowerCase().includes(position.toLowerCase()) ||
-                job.company.toLowerCase().includes(position.toLowerCase()) ||
-                isChecked && job.contract === "Full Time" &&
-                isChecked && selectedJob ? job.contract === "Full Time" : ""
-          
-        );
+        const searchPosition = jobData.filter((job) => {
 
 
 
-        //      const fullTime = isChecked ? searchPosition.filter(item => item.contract === "Full Time") : searchPosition
-        //     // setFilteredJobs(fullTimeJobs); chatgtp's suggestion
+            const containsPositionSearch = job.position.toLowerCase().includes(position.toLowerCase())
+            const containsCompanySearch = job.company.toLowerCase().includes(position.toLowerCase())
+            const matchesFullTimeFilter = onlyShowFullTime ? job.contract === "Full Time" : true;
+
+            return matchesFullTimeFilter && (containsCompanySearch || containsPositionSearch);
+
+            // let shouldIncludeJobInResults = true;
+            // if (onlyShowFullTime) {
+            //     shouldIncludeJobInResults = job.contract === "Full Time"
+            // }
+            // const containsPositionSearch = job.position.toLowerCase().includes(position.toLowerCase())
+            // const containsCompanySearch = job.company.toLowerCase().includes(position.toLowerCase())
+
+            // return shouldIncludeJobInResults && (containsCompanySearch || containsPositionSearch);
+
+
+        });
 
         setFilteredJobs(searchPosition);
 
 
     };
+    console.log(selectedJob)
 
     return (
         <>
@@ -110,7 +119,10 @@ function Home() {
 
                 {!selectedJob ? <div className="header-filters">
                     <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} className={`search-input ${darkTheme ? "dark" : ""}`} placeholder='Filter by title, comnpanies, expertise...' />
-                    <select className={`location-filter default-text ${darkTheme ? "dark" : ""}`}>
+                    <select className={`location-filter default-text ${darkTheme ? "dark" : ""}`}
+                        onChange={(selectedlocation) => setLocation(selectedlocation.target.value)}
+                        value={location}
+                    >
                         <option value="false">
                             Filter by location...
                         </option>
@@ -124,8 +136,8 @@ function Home() {
                     </select>
                     <div className={`job-hours-div ${darkTheme ? "dark" : ""}`}>
                         <div className="hours">
-                            <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
-                                <span className={`tick ${!isChecked ? "untick" : ""}`}>
+                            <span className={`tick-bg ${!onlyShowFullTime ? "unchecked" : ""}`} onClick={() => setOnlyShowFullTime(!onlyShowFullTime)}>
+                                <span className={`tick ${!onlyShowFullTime ? "untick" : ""}`}>
                                 </span>
                             </span>
                             <span className='job-hours-text'>Full Time Only</span>
@@ -159,8 +171,8 @@ function Home() {
                             <option value="United States">United States</option>
                         </select>
                         <div className="hours">
-                            <span className={`tick-bg ${!isChecked ? "unchecked" : ""}`} onClick={() => setIsChecked(!isChecked)}>
-                                <span className={`tick ${!isChecked ? "untick" : ""}`}>
+                            <span className={`tick-bg ${!onlyShowFullTime ? "unchecked" : ""}`} onClick={() => setOnlyShowFullTime(!onlyShowFullTime)}>
+                                <span className={`tick ${!onlyShowFullTime ? "untick" : ""}`}>
                                 </span>
                             </span>
                             <span className='job-hours-text'>Full Time Only</span>

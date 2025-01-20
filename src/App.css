@@ -91,7 +91,7 @@ body {
   border: none;
   border-right: 0.063rem solid rgba(110, 128, 152, .2);
   cursor: pointer;
-  padding: 2rem 4.5rem 2rem 2rem;
+  padding: 2rem 4.5rem 2rem 3rem;
   background-image: url("/images/search.svg");
   background-position: left 1rem center;
   background-size: 1rem;
@@ -135,9 +135,7 @@ body {
   /* padding: 2rem 2rem 2rem 3.5rem; */
 }
 
-::placeholder {
-  padding-left: 1rem;
-}
+
 
 .job-hours-div {
   display: flex;
@@ -366,8 +364,7 @@ body {
 
 .logo-bg img {
   width: 5rem;
-  /* top: 0;
-  bottom: 0;  why this didn't work, I had to give the parent a display of flex, ai and jc*/
+
 }
 
 .company-info {
