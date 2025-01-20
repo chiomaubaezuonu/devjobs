@@ -79,8 +79,9 @@ function Home() {
             const containsPositionSearch = job.position.toLowerCase().includes(position.toLowerCase())
             const containsCompanySearch = job.company.toLowerCase().includes(position.toLowerCase())
             const matchesFullTimeFilter = onlyShowFullTime ? job.contract === "Full Time" : true;
+            const matchesLocationFilter = job.location === location
 
-            return matchesFullTimeFilter && (containsCompanySearch || containsPositionSearch);
+            return matchesFullTimeFilter && (containsCompanySearch || containsPositionSearch) && matchesLocationFilter;
 
             // let shouldIncludeJobInResults = true;
             // if (onlyShowFullTime) {
