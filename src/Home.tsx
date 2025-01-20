@@ -75,19 +75,21 @@ function Home() {
         const searchPosition = jobData.filter((job) =>
 
             job.position.toLowerCase().includes(position.toLowerCase()) ||
-            job.company.toLowerCase().includes(position.toLowerCase())
-            // const matchesContract = !isChecked || job.contract === "Full Time";
-
-            // // Include job only if both conditions are satisfied
-            // return matchesSearch && matchesContract;
-
+                job.company.toLowerCase().includes(position.toLowerCase()) ||
+                isChecked && job.contract === "Full Time" &&
+                isChecked && selectedJob ? job.contract === "Full Time" : ""
+          
         );
+
+
+
+        //      const fullTime = isChecked ? searchPosition.filter(item => item.contract === "Full Time") : searchPosition
+        //     // setFilteredJobs(fullTimeJobs); chatgtp's suggestion
 
         setFilteredJobs(searchPosition);
 
 
     };
-
 
     return (
         <>
@@ -108,9 +110,7 @@ function Home() {
 
                 {!selectedJob ? <div className="header-filters">
                     <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} className={`search-input ${darkTheme ? "dark" : ""}`} placeholder='Filter by title, comnpanies, expertise...' />
-                    {/* <input type="text" className={`location-filter ${darkTheme ? "dark" : ""}`} placeholder='Filter by location...' /> */}
                     <select className={`location-filter default-text ${darkTheme ? "dark" : ""}`}>
-                        {/* <option className='default' disabled hidden value="false">Filter by location…</option> */}
                         <option value="false">
                             Filter by location...
                         </option>
