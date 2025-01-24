@@ -20,11 +20,10 @@
 body {
   background-color: var(--app-bg-color);
   font-family: "Kumbh Sans", serif;
-  /* overflow: auto; */
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
+
 
 
 .header {
@@ -38,6 +37,7 @@ body {
   padding: 2.813rem 12.4rem 5rem 12.4rem;
   position: relative;
   border-bottom-left-radius: 5.5rem;
+
 }
 
 .inner {
@@ -70,7 +70,6 @@ body {
 .moon {
   width: 0.75rem;
 }
-
 
 .header-filters {
   width: calc(100% - 24.8rem);
@@ -212,7 +211,6 @@ body {
 
 .jobs-list-container {
   display: flex;
-  /* padding: 1.25rem 0 6.25rem 0;  why this bottom-padding is not visible*/
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
@@ -233,7 +231,7 @@ body {
   margin-top: 1.563rem;
   border-radius: 0.375rem;
   background-color: var(--filters-bg-color);
-  width: calc(33.33333% - 1.8rem);
+  width: calc(33.33333% - 1.6rem);
   position: relative;
   cursor: pointer;
 }
@@ -407,8 +405,10 @@ body {
   text-align: center;
   border-radius: 5px;
   padding: 1rem 1.25rem;
-  min-width: 141px;
   cursor: pointer;
+}
+.btn-dark{
+  background-color: var(--button-dark-bg);
 }
 
 .company-site:hover {
@@ -439,7 +439,7 @@ body {
 .job-post-div {
   display: flex;
   align-items: center;
-  margin: 0 0 8px;
+  margin: 0 0 1rem;
 }
 
 .title {
@@ -529,9 +529,69 @@ body {
   color: var(--filters-bg-color);
 }
 
+
 .footer-dark {
   color: var(--filters-bg-color)
 }
+
+@media (max-width: 1023px) {
+
+  .header {
+    padding: 2rem 1.25rem 5.4rem 1.25rem;
+    height: 8.5rem;
+    background-image: url("/images/bg-pattern-header.549c5470.svg");
+    border-radius: 0;
+  }
+
+  .inner {
+    width: 100%;
+  }
+
+
+  .header-filters {
+    width: calc(100% - 2rem);
+    bottom: -2.4rem;
+  }
+
+  .jobs-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 6.25rem;
+  }
+
+  .job-card {
+    width: 23.883rem;
+    padding: 3.5rem 2rem 3.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1.563rem;
+    border-radius: 0.375rem;
+    background-color: var(--filters-bg-color);
+    position: relative;
+
+
+  }
+  .selectedJob{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 0 1.25rem 1.25rem;
+    top: -2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .footer-details{
+    width: 100%;
+    padding: 0 1.25rem;
+  }
+}
+
+
 
 @media (max-width: 767px) {
   .header {
@@ -567,8 +627,7 @@ body {
     width: 100vw;
   }
 
-  .modal {}
-
+ 
   .ant-modal .ant-modal-content {
     display: block;
     top: 7.1rem;
@@ -592,10 +651,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  .jobs-list-container {
-    /* overflow: hidden;
-    height: 100vh; */
-  }
+
 
   select {
     -webkit-appearance: none;
@@ -705,6 +761,7 @@ body {
     margin-top: 1.5rem;
     width: 100%;
     background-color: #f2f2f2;
+    padding: 0 1rem;
   }
 
   .company-name-wrapper {
@@ -730,6 +787,9 @@ body {
     background-color: var(--button-light-bg-color);
     cursor: pointer;
   }
+   .btn-dark{
+    background-color: var(--button-dark-bg);
+  }
 
   .logo-bg {
     width: 3.125rem;
@@ -751,6 +811,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 1.4rem;
+    width: 100%;
   }
 
   .company-link {
@@ -761,7 +822,7 @@ body {
 
   .job-info-container {
     padding: 0;
-    margin: 0 1.25rem;
+    margin: 0;
     border-radius: 0.375rem;
     margin-bottom: 3.5rem;
   }
@@ -836,10 +897,185 @@ body {
 
   .dark {
     background-color: var(--text-color);
-    /*why are cards  given background-color when I add this style in media query */
   }
 
   .selected-dark {
     background-color: #121721;
   }
+
+
+}
+
+
+@media(min-width: 1024px) {
+
+  .jobs-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 6.25rem;
+  }
+
+  .job-card {
+    width: 19.041rem;
+    height: 14.375rem;
+    margin: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(/images/bg-pattern-header.549c5470.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 2.813rem 1rem 5rem 1rem;
+    position: relative;
+    border-bottom-left-radius: 5.5rem;
+  }
+
+  .header-filters {
+    width: 95%;
+    position: absolute;
+    bottom: -2.4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items:stretch;
+   
+  }
+  .selectedJob {
+    margin: 0 auto;
+    width: 48.625rem;
+    position: relative;
+    top: -2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
+ .title{
+  font-size: 1.25rem;
+ }
+ 
+  .footer-details{
+    width: 48.625rem;
+    padding: 0 1.25rem;
+  
+  }
+}
+
+
+
+@media(min-width: 1240px) {
+
+  .jobs-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 6.25rem;
+  }
+
+  .job-card {
+    width: 22.041rem;
+    height: 14.375rem;
+    margin: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(/images/bg-pattern-header.549c5470.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 2.813rem 4.4rem 5rem 4.5rem;
+    position: relative;
+    border-bottom-left-radius: 5.5rem;
+  }
+
+  .header-filters {
+    width: 91%;
+    position: absolute;
+    bottom: -2.4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    /* left: 2.3rem; */
+  }
+}
+
+@media(min-width: 1356px) {
+  .jobs-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    width: calc(100% - 25rem);
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 6.25rem;
+
+  }
+
+  .job-card {
+    padding: 3.5rem 2rem 3.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1.563rem;
+    border-radius: 0.375rem;
+    background-color: var(--filters-bg-color);
+    width: calc(33.33333% - 1.6rem);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("/images/bg-pattern-header.549c5470.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 2.813rem 12.4rem 5rem 12.4rem;
+    position: relative;
+    border-bottom-left-radius: 5.5rem;
+
+  }
+
+  .header-filters {
+    width: calc(100% - 24.8rem);
+    position: absolute;
+    bottom: -2.4rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.375rem;
+    overflow: hidden;
+  
+  }
+  
+ 
+    .company-link {
+      padding-right: 0;
+      margin-bottom: 1.4rem;
+ 
+    }
+    
+
 }
